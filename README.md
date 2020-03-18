@@ -9,6 +9,7 @@ This repository is for replicating parts of the results in the paper "O’Meara 
 List contributor names and github user names, or email addresses if desired
 
 Analyst part: Jinghan Huang (zx1an95) jh50@bu.edu
+Data Curator: Jiaming Zhang, bzhang19@bu.edu
 
 # Repository Contents
 
