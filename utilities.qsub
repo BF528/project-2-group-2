@@ -1,0 +1,18 @@
+#!/bin/bash -l
+
+#$ -P bf528
+#$ -cwd
+#$ -j y
+#$ -pe mpi_16_tasks_per_node 16
+
+echo "Running job $JOB_ID"
+echo "Started: $(date +%F)"
+echo "Running in directory: $PWD"
+
+# your commands here
+module load python3 samtools/0.1.19 rseqc
+geneBody_coverage.py -i P0_1_tophat/accepted_hits.bam -r annot/mm9.bed -f pdf -o P2coverage
+inner_distance.py -i P0_1_tophat/accepted_hits.bam -o P2Distance -r annot/mm9.bed
+bam_stat.py -i P0_1_tophat/accepted_hits.bam
+
+echo "Job finished: $(date +%F)"
